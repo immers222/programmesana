@@ -333,7 +333,7 @@ HTML = """
                     <table>
                         <thead>
                             <tr>
-                                <th>ID</th>
+                                <th>#</th>
                                 <th>Amount</th>
                                 <th>Category</th>
                                 <th>Date</th>
@@ -439,10 +439,10 @@ async function loadExpenses() {
     const table = document.getElementById('expense-table');
     table.innerHTML = '';
 
-    expenses.forEach(expense => {
+    expenses.forEach((expense, index) => {
         table.innerHTML += `
             <tr>
-                <td>${expense[0]}</td>
+                <td>${index + 1}</td>
                 <td>${expense[1]} €</td>
                 <td>${expense[2]}</td>
                 <td>${expense[3]}</td>
